@@ -69,7 +69,7 @@
 *Proxy layers that inspect, validate, and intercept autonomous agent SQL queries before they touch production data.*
 
 - [DBShield](https://github.com/RitualDev-Lab/DBShield) - Air-gapped database wire proxy that intercepts unindexed queries, blocks destructive `DROP`/`TRUNCATE` operations, and orchestrates two-man rule Slack approvals.
-- [PgCop](https://github.com/pgcop/pgcop) - Automated PostgreSQL policy enforcer for query safety.
+- [SQLFluff](https://github.com/sqlfluff/sqlfluff) - Dialect-flexible SQL linter and AST security parser validating agent-generated database queries.
 - [Prisma Pulse Guard](https://github.com/prisma/prisma) - Safe database interaction wrappers with row-level permission constraints.
 
 ---

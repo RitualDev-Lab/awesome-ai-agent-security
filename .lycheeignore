@@ -1,0 +1,6 @@
+# Ignore local network URLs
+http://127.0.0.1
+http://localhost
+
+# Exclude GitHub issue templates / query params prone to rate limiting
+https://github.com/RitualDev-Lab/awesome-ai-agent-security/issues/new*
