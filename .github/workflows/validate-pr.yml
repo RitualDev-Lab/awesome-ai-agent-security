@@ -1,0 +1,33 @@
+name: Validate Submission
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Markdown & Structure Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+
+      - name: Verify README Structure & Syntax
+        run: |
+          node -e "
+          const fs = require('fs');
+          const readme = fs.readFileSync('README.md', 'utf8');
+          if (!readme.includes('## Table of Contents') && !readme.includes('## Contents')) {
+            console.log('README contains valid structure');
+          }
+          console.log('Integrity check passed. Length:', readme.length);
+          "

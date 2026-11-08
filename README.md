@@ -146,6 +146,18 @@ Contributions are welcome! Please read the [Contributing Guidelines](CONTRIBUTIN
 
 ---
 
+## 🏷️ Embed the Badge
+
+If your tool or framework is featured on **Awesome AI Agent Security**, add this badge to your `README.md`:
+
+```markdown
+[![Featured on Awesome AI Agent Security](https://img.shields.io/badge/Awesome-AI%20Agent%20Security-00F59B?style=flat-square&logo=shield)](https://github.com/RitualDev-Lab/awesome-ai-agent-security)
+```
+
+[![Featured on Awesome AI Agent Security](https://img.shields.io/badge/Awesome-AI%20Agent%20Security-00F59B?style=flat-square&logo=shield)](https://github.com/RitualDev-Lab/awesome-ai-agent-security)
+
+---
+
 ## 📄 License
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
