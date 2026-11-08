@@ -146,14 +146,32 @@ Contributions are welcome! Please read the [Contributing Guidelines](CONTRIBUTIN
 
 ---
 
-## 🏷️ Embed the Badge
+## 🏷️ Embed Verifiable Badges in Your Repository
 
-If your tool or framework is featured on **Awesome AI Agent Security**, add this badge to your `README.md`:
+Add verifiable cryptographic defense, monetization, and catalog badges to your agent or tool `README.md`:
 
+#### 1. Runtime Sandboxing & Egress Defense
+```markdown
+[![Secured by AgentShield](https://ritualdev.in/badge/secured-by-agentshield.svg)](https://ritualdev.in/agentshield)
+```
+[![Secured by AgentShield](https://ritualdev.in/badge/secured-by-agentshield.svg)](https://ritualdev.in/agentshield)
+
+#### 2. Model Context Protocol (MCP) Monetization
+```markdown
+[![Monetized with MCP](https://ritualdev.in/badge/monetized-with-mcp.svg)](https://ritualdev.in/mcp-builder)
+```
+[![Monetized with MCP](https://ritualdev.in/badge/monetized-with-mcp.svg)](https://ritualdev.in/mcp-builder)
+
+#### 3. DevShelf Programmatic Registry A+ Verification
+```markdown
+[![Verified by DevShelf](https://ritualdev.in/badge/verified-by-devshelf.svg)](https://ritualdev.in/devshelf)
+```
+[![Verified by DevShelf](https://ritualdev.in/badge/verified-by-devshelf.svg)](https://ritualdev.in/devshelf)
+
+#### 4. Featured on Awesome AI Agent Security
 ```markdown
 [![Featured on Awesome AI Agent Security](https://img.shields.io/badge/Awesome-AI%20Agent%20Security-00F59B?style=flat-square&logo=shield)](https://github.com/RitualDev-Lab/awesome-ai-agent-security)
 ```
-
 [![Featured on Awesome AI Agent Security](https://img.shields.io/badge/Awesome-AI%20Agent%20Security-00F59B?style=flat-square&logo=shield)](https://github.com/RitualDev-Lab/awesome-ai-agent-security)
 
 ---
