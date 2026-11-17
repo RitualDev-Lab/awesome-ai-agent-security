@@ -1,0 +1,217 @@
+[
+  {
+    "systemId": "ritualdev-agent-defense",
+    "systemName": "AgentShield + DBShield Suite",
+    "architecture": "ebpf-kernel-sandbox",
+    "totalVectors": 500,
+    "blockedCount": 500,
+    "bypassCount": 0,
+    "blockRatePercent": 100,
+    "p50LatencyMs": 0.067,
+    "p99LatencyMs": 0.09,
+    "categoryScores": {
+      "prompt-injection": {
+        "total": 120,
+        "blocked": 120,
+        "bypassed": 0,
+        "ratePercent": 100
+      },
+      "tool-injection": {
+        "total": 100,
+        "blocked": 100,
+        "bypassed": 0,
+        "ratePercent": 100
+      },
+      "data-exfiltration": {
+        "total": 100,
+        "blocked": 100,
+        "bypassed": 0,
+        "ratePercent": 100
+      },
+      "database-destruction": {
+        "total": 90,
+        "blocked": 90,
+        "bypassed": 0,
+        "ratePercent": 100
+      },
+      "process-escape": {
+        "total": 90,
+        "blocked": 90,
+        "bypassed": 0,
+        "ratePercent": 100
+      }
+    }
+  },
+  {
+    "systemId": "llamaguard-3",
+    "systemName": "LlamaGuard 3 (8B)",
+    "architecture": "guardrails-model",
+    "totalVectors": 500,
+    "blockedCount": 209,
+    "bypassCount": 291,
+    "blockRatePercent": 41.8,
+    "p50LatencyMs": 225.2,
+    "p99LatencyMs": 314.8,
+    "categoryScores": {
+      "prompt-injection": {
+        "total": 120,
+        "blocked": 104,
+        "bypassed": 16,
+        "ratePercent": 86.7
+      },
+      "tool-injection": {
+        "total": 100,
+        "blocked": 54,
+        "bypassed": 46,
+        "ratePercent": 54
+      },
+      "data-exfiltration": {
+        "total": 100,
+        "blocked": 51,
+        "bypassed": 49,
+        "ratePercent": 51
+      },
+      "database-destruction": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      },
+      "process-escape": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      }
+    }
+  },
+  {
+    "systemId": "nemo-guardrails",
+    "systemName": "NeMo Guardrails",
+    "architecture": "prompt-evaluator",
+    "totalVectors": 500,
+    "blockedCount": 268,
+    "bypassCount": 232,
+    "blockRatePercent": 53.6,
+    "p50LatencyMs": 152.3,
+    "p99LatencyMs": 217.8,
+    "categoryScores": {
+      "prompt-injection": {
+        "total": 120,
+        "blocked": 100,
+        "bypassed": 20,
+        "ratePercent": 83.3
+      },
+      "tool-injection": {
+        "total": 100,
+        "blocked": 78,
+        "bypassed": 22,
+        "ratePercent": 78
+      },
+      "data-exfiltration": {
+        "total": 100,
+        "blocked": 56,
+        "bypassed": 44,
+        "ratePercent": 56
+      },
+      "database-destruction": {
+        "total": 90,
+        "blocked": 34,
+        "bypassed": 56,
+        "ratePercent": 37.8
+      },
+      "process-escape": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      }
+    }
+  },
+  {
+    "systemId": "langchain-judge",
+    "systemName": "LangChain Secondary LLM-as-a-Judge",
+    "architecture": "guardrails-model",
+    "totalVectors": 500,
+    "blockedCount": 207,
+    "bypassCount": 293,
+    "blockRatePercent": 41.4,
+    "p50LatencyMs": 402,
+    "p99LatencyMs": 567.7,
+    "categoryScores": {
+      "prompt-injection": {
+        "total": 120,
+        "blocked": 79,
+        "bypassed": 41,
+        "ratePercent": 65.8
+      },
+      "tool-injection": {
+        "total": 100,
+        "blocked": 56,
+        "bypassed": 44,
+        "ratePercent": 56
+      },
+      "data-exfiltration": {
+        "total": 100,
+        "blocked": 49,
+        "bypassed": 51,
+        "ratePercent": 49
+      },
+      "database-destruction": {
+        "total": 90,
+        "blocked": 23,
+        "bypassed": 67,
+        "ratePercent": 25.6
+      },
+      "process-escape": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      }
+    }
+  },
+  {
+    "systemId": "unprotected-baseline",
+    "systemName": "Unprotected Autonomous Agent Baseline",
+    "architecture": "unprotected",
+    "totalVectors": 500,
+    "blockedCount": 0,
+    "bypassCount": 500,
+    "blockRatePercent": 0,
+    "p50LatencyMs": 0.01,
+    "p99LatencyMs": 0.01,
+    "categoryScores": {
+      "prompt-injection": {
+        "total": 120,
+        "blocked": 0,
+        "bypassed": 120,
+        "ratePercent": 0
+      },
+      "tool-injection": {
+        "total": 100,
+        "blocked": 0,
+        "bypassed": 100,
+        "ratePercent": 0
+      },
+      "data-exfiltration": {
+        "total": 100,
+        "blocked": 0,
+        "bypassed": 100,
+        "ratePercent": 0
+      },
+      "database-destruction": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      },
+      "process-escape": {
+        "total": 90,
+        "blocked": 0,
+        "bypassed": 90,
+        "ratePercent": 0
+      }
+    }
+  }
+]

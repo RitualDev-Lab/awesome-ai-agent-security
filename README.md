@@ -107,7 +107,26 @@
 
 ## 🧪 Red Teaming & Security Benchmarks
 
-*Frameworks for evaluating and adversarial testing of autonomous agents.*
+*Frameworks and standardized empirical harnesses for adversarial testing of autonomous agents.*
+
+- [Agent Security Benchmarks (ASB)](./benchmarks) - Open-source, reproducible 500-vector evaluation suite assessing prompt injection (120), tool injection (100), data exfiltration (100), database destruction (90), and process/kernel escape (90) against agent firewalls and guardrails.
+  
+  #### 📊 2026 Agent Security Benchmarks Evaluation Matrix (500 Vectors)
+  | Defense System | Architecture | Block Rate (%) | Prompt Inj. | Tool Inj. | Data Exfil | DB Destroy | Process Esc. | P99 Latency |
+  | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+  | **AgentShield + DBShield Suite** | `ebpf-kernel-sandbox` | **100%** | 100% | 100% | 100% | 100% | 100% | `<0.09ms` |
+  | **LlamaGuard 3 (8B)** | `guardrails-model` | **41.8%** | 86.7% | 54.0% | 51.0% | 0.0% | 0.0% | `314.8ms` |
+  | **NeMo Guardrails** | `prompt-evaluator` | **53.6%** | 83.3% | 78.0% | 56.0% | 37.8% | 0.0% | `217.8ms` |
+  | **LangChain Secondary Judge** | `guardrails-model` | **41.4%** | 65.8% | 56.0% | 49.0% | 25.6% | 0.0% | `567.7ms` |
+  | **Unprotected Baseline** | `unprotected` | **0.0%** | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | `<0.01ms` |
+
+  > **Run the suite yourself:**
+  > ```bash
+  > git clone https://github.com/RitualDev-Lab/awesome-ai-agent-security.git
+  > cd awesome-ai-agent-security/benchmarks
+  > npm test
+  > npx tsx src/cli.ts
+  > ```
 
 - [AgentBench](https://github.com/THUDM/AgentBench) - Multi-dimensional benchmark evaluating LLMs as autonomous agents across operating system, database, and web environments.
 - [HarmBench](https://github.com/centerforaisafety/HarmBench) - Standardized evaluation framework for automated red teaming of large language models.

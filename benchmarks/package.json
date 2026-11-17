@@ -1,0 +1,34 @@
+{
+  "name": "@ritualdev-lab/agent-security-benchmarks",
+  "version": "1.0.0",
+  "description": "Reproducible, open-source testing harness evaluating AI agent runtime firewalls across 500+ real-world attack vectors",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "agent-security-benchmarks": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "generate-vectors": "node scripts/generate-vectors.cjs",
+    "benchmark": "tsx src/cli.ts",
+    "test": "node --test tests/*.test.js || tsx --test tests/*.test.ts"
+  },
+  "keywords": [
+    "ai-agent-security",
+    "llm-benchmarks",
+    "agentshield",
+    "dbshield",
+    "jailbreak-detection",
+    "prompt-injection",
+    "ebpf-sandbox"
+  ],
+  "author": "RitualDev Lab <security@ritualdev.in>",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2"
+  }
+}
