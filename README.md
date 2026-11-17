@@ -181,3 +181,12 @@ Add verifiable cryptographic defense, monetization, and catalog badges to your a
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 To the extent possible under law, [RitualDev Lab](https://ritualdev.in) has waived all copyright and related or neighboring rights to this work.
+
+---
+
+## 🛡️ Community & Governance
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+- [Accessibility Statement](ACCESSIBILITY.md)
+- [License](LICENSE)
