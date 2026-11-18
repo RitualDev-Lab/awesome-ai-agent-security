@@ -18,6 +18,7 @@
 ## 📑 Contents
 
 - [Threat Models & Taxonomies](#threat-models--taxonomies)
+- [OWASP LLM Top 10 (2025) Defense Matrix](#owasp-llm-top-10-2025-defense-matrix)
 - [Runtime Sandboxes & Process Confinement](#runtime-sandboxes--process-confinement)
 - [Zero-Leak Secret Redaction & Env Defense](#zero-leak-secret-redaction--env-defense)
 - [Database Guardrails & Wire Proxies](#database-guardrails--wire-proxies)
@@ -37,6 +38,25 @@
 - [MITRE ATLAS™ (Adversarial Threat Landscape for AI Systems)](https://atlas.mitre.org/) - Comprehensive matrix mapping real-world adversarial tactics targeting AI-enabled systems.
 - [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) - Guidance on managing cybersecurity risks in autonomous decision loops.
 - [CWE-77 / CWE-78 (Improper Neutralization of Special Elements used in a Command)](https://cwe.mitre.org/data/definitions/77.html) - Critical root cause when agents generate raw shell instructions (`eval`, `sh -c`).
+
+---
+
+## 🛡️ OWASP LLM Top 10 (2025) Defense Matrix
+
+Structured mapping of every [OWASP Top 10 for LLM Applications (2025)](https://owasp.org/www-project-top-10-for-large-language-model-applications/) risk category to concrete autonomous coding agent attack vectors and runtime controls:
+
+| OWASP ID | Risk Category | Autonomous Agent Attack Vector | Runtime Defense Pattern | Reference Open-Source Tooling |
+| :--- | :--- | :--- | :--- | :--- |
+| **LLM01** | **Prompt Injection** | Indirect tool-poisoning inside third-party MCP descriptions or repo files hijacking agent shell execution | Ephemeral MCP schema sanitization, Unicode smuggling stripping & strict command AST validation | [SkillPrism](https://github.com/RitualDev-Lab/SkillPrism), [AgentShield](https://github.com/RitualDev-Lab/AgentShield) |
+| **LLM02** | **Sensitive Information Disclosure** | Agents dumping `.env`, `/proc/self/environ`, SSH keys, or PII into LLM context & PR diffs | Dual-pass zero-leak regex + Shannon entropy redaction & volatile surrogate masking | [AgentShield](https://github.com/RitualDev-Lab/AgentShield), [Gitleaks](https://github.com/gitleaks/gitleaks) |
+| **LLM03** | **Supply Chain** | Unverified unsigned native binaries, unpinned CI actions, or tampered MCP packages | SHA-pinned workflows, SLSA provenance, CycloneDX SBOMs & unsigned binary policy gates | [DevShelf](https://github.com/RitualDev-Lab/DevShelf), [OpenSSF Scorecard](https://github.com/ossf/scorecard) |
+| **LLM04** | **Data and Model Poisoning** | Poisoned RAG documents, corrupted synthetic fixtures, or tainted local embeddings | Air-gapped deterministic evaluation benchmarks & immutable hash-chained audit ledgers | [AgentShield](https://github.com/RitualDev-Lab/AgentShield), [MockForge](https://github.com/RitualDev-Lab/MockForge) |
+| **LLM05** | **Improper Output Handling** | Unsanitized LLM-generated SQL DDL/DML or shell commands executed directly against host/DB | PostgreSQL Extended Query wire proxy (`P`/`B`/`E`) AST inspection & parameterized dry-run sandboxes | [DBShield](https://github.com/RitualDev-Lab/DBShield), [SQLFluff](https://github.com/sqlfluff/sqlfluff) |
+| **LLM06** | **Excessive Agency** | Unconstrained `DROP TABLE`, bulk `DELETE`, `curl \| bash`, or unauthorized cloud metadata access | OS kernel sandboxing (`Landlock`/`bwrap`/`Seatbelt`), IMDS blocking & ChatOps 2-person approvals | [AgentShield](https://github.com/RitualDev-Lab/AgentShield), [DBShield](https://github.com/RitualDev-Lab/DBShield) |
+| **LLM07** | **System Prompt Leakage** | Adversary extracting system guardrails, hidden tool policies, or internal credentials | Output secret redaction, strict role boundary enforcement & zero-secret prompt hygiene | [AgentShield](https://github.com/RitualDev-Lab/AgentShield), [PromptShield](https://github.com/RitualDev-Lab/PromptShield) |
+| **LLM08** | **Vector and Embedding Weaknesses** | Cross-tenant retrieval leakage or adversarial context stuffing in vector indexes | Tenant-scoped session isolation, JIT progressive tool loading & schema compaction | [SkillPrism](https://github.com/RitualDev-Lab/SkillPrism) |
+| **LLM09** | **Misinformation** | Hallucinated security claims, fabricated query plans, or unverified compliance assertions | Real `EXPLAIN` cost gates, pre-image state checksums & reproducible CI benchmark suites | [DBShield](https://github.com/RitualDev-Lab/DBShield) |
+| **LLM10** | **Unbounded Consumption** | Recursive MCP tool loops burning 100k+ tokens or full-table sequential scans locking prod DBs | Dynamic context window budgeting, JIT semantic receipts, SQL cost gates & statement timeouts | [SkillPrism](https://github.com/RitualDev-Lab/SkillPrism), [DBShield](https://github.com/RitualDev-Lab/DBShield) |
 
 ---
 
