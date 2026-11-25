@@ -21,8 +21,18 @@
     "dbshield",
     "jailbreak-detection",
     "prompt-injection",
-    "ebpf-sandbox"
+    "ebpf-sandbox",
+    "owasp-llm-top-10"
   ],
+  "homepage": "https://github.com/RitualDev-Lab/awesome-ai-agent-security#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitualDev-Lab/awesome-ai-agent-security.git",
+    "directory": "benchmarks"
+  },
+  "bugs": {
+    "url": "https://github.com/RitualDev-Lab/awesome-ai-agent-security/issues"
+  },
   "author": "RitualDev Lab <security@ritualdev.in>",
   "license": "Apache-2.0",
   "dependencies": {},
